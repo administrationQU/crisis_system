@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/roles.css' %}">
+
+<div class="container">
+
+    <h1>{{ topic.title }}</h1>
+
+    <p>Select Role</p>
+
+    <div class="roles">
+
+        <a href="/protocol/{{ topic.id }}/doctor/" class="role doctor">
+            👨‍⚕️ Doctor
+        </a>
+
+        <a href="/protocol/{{ topic.id }}/nurse/" class="role nurse">
+            👩‍⚕️ Nurse
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

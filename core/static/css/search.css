@@ -1,0 +1,96 @@
+/* 🔹 Container */
+.container {
+    max-width: 850px;
+    margin: auto;
+    padding: 30px;
+}
+
+/* 🔹 Title */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+/* 🔹 Result Text */
+.result-text {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+/* ❌ Not Found */
+.not-found {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+/* 📦 Topic Card */
+.topic-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+/* Hover Effect */
+.topic-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* 📝 Title */
+.topic-card h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* 🔘 Buttons Container */
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* 🔵 View Button */
+.view-btn {
+    padding: 8px 14px;
+    background: #2196f3;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Hover */
+.view-btn:hover {
+    background: #1976d2;
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+
+    .container {
+        padding: 15px;
+    }
+
+    .topic-card {
+        padding: 15px;
+    }
+
+    .view-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+}

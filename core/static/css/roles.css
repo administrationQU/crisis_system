@@ -1,0 +1,32 @@
+.container {
+    text-align: center;
+    padding: 50px;
+}
+
+.roles {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.role {
+    padding: 30px 50px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.doctor {
+    background: #2196f3;
+}
+
+.nurse {
+    background: #4caf50;
+}
+
+.role:hover {
+    transform: scale(1.1);
+}

@@ -1,0 +1,52 @@
+body {
+    background-color: #f6f6f6;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center; /* توسيط عمودي */
+    justify-content: center; /* توسيط أفقي */
+    font-family: -apple-system, system-ui, sans-serif;
+    overflow: hidden; /* منع السكرول */
+}
+
+.error-container {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+/* ضبط حجم الأيقونة يدوياً لضمان ظهورها وعدم كبرها */
+.main-icon {
+    width: 65px; /* حجم صغير واحترافي */
+    height: 65px;
+    fill: #a0a0a0; /* لون رمادي هادئ */
+    margin-bottom: 20px;
+}
+
+.error-code {
+    font-size: 5rem;
+    font-weight: 300;
+    color: #707070;
+    margin: 0;
+    line-height: 1;
+}
+
+.main-message {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #a0a0a0;
+    margin: 10px 0 30px 0;
+}
+
+.help-text {
+    color: #b0b0b0;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.home-link {
+    color: #b0b0b0;
+    text-decoration: underline;
+}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/search.css' %}">
+
+<div class="container">
+
+    <!-- 🔍 Title -->
+    <h1>Search Results</h1>
+
+    <!-- 🔎 Query Text -->
+    {% if query %}
+        <p class="result-text">Results for "{{ query }}"</p>
+    {% endif %}
+
+    <!-- ❌ Not Found -->
+    {% if not_found %}
+        <p class="not-found">❌ No topic found</p>
+    {% endif %}
+
+    <!-- ✅ Results -->
+    {% if topics %}
+        {% for topic in topics %}
+            <div class="topic-card">
+
+                <h3>🚑 {{ topic.title }}</h3>
+
+                <div class="buttons">
+                    <a href="/topic/{{ topic.id }}/role/" class="view-btn">
+                        View
+                    </a>
+                </div>
+
+            </div>
+        {% endfor %}
+    {% endif %}
+
+</div>
+
+{% endblock %}

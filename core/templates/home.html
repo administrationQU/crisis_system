@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<div class="container">
+
+    <h1 class="title">Emergency Categories</h1>
+
+    <div class="grid">
+
+        {% for category in categories %}
+        <a href="/category/{{ category.id }}/" class="card">
+            <div class="icon">⚕️</div>
+            <div class="name">{{ category.name }}</div>
+        </a>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

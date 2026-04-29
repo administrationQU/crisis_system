@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emergency System</title>
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+
+<body>
+
+<!-- 🔥 NAVBAR -->
+<div class="navbar">
+
+    <a href="/">🏠 Home</a>
+
+    <!-- 🔍 Search in navbar -->
+    <form action="/search/" method="GET" class="search-form">
+        <input type="text" name="q" placeholder="Search emergency cases...">
+        <button type="submit">Search</button>
+    </form>
+
+</div>
+
+<!-- 🔥 CONTENT -->
+<div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>
