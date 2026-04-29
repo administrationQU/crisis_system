@@ -27,9 +27,8 @@ def search(request):
 
 # 🏠 Home (Categories)
 def home(request):
-    return HttpResponse("it home working")
-    # categories = Category.objects.all()
-    # return render(request, 'home.html', {'categories': categories})
+    categories = Category.objects.all()
+    return render(request, 'home.html', {'categories': categories})
 
 
 # 📂 Topics Category
