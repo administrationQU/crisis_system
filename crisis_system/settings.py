@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-@^f^o%48h3j5fgeb+y1whz)w%a^&^w1+zln(s3a%@5ib&7+0(1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -122,27 +122,18 @@ import os
 from pathlib import Path
 
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-# نخرج من مجلد الإعدادات (core) للمجلد الرئيسي (crisis_system)
-BASE_DIR_PATH = os.path.dirname(PROJECT_ROOT)
-# 1. الرابط في المتصفح
+
 STATIC_URL = '/static/'
 
-# 2. تحديد المسار الفعلي لمجلد static (تعديل جوهري)
-# هذا السطر سيجعل دجانجو يرى مجلد static الموجود داخل crisis_system
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "core", "static"),
+    BASE_DIR / "core" / "static"
 ]
 
-# 3. المجلد الذي سيجمع فيه الملفات (staticfiles)
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
-# 4. تفعيل WhiteNoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# مسار رفع الصور والملفات الخاصة بمحرر النصوص
 CKEDITOR_UPLOAD_PATH = "uploads/ckeditor/"
 
-# إذا لم تكن قد ضبطت MEDIA_ROOT سابقاً، تأكد من وجوده أيضاً
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = BASE_DIR / 'media'
