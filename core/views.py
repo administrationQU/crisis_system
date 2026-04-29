@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Category, Topic, Protocol, Step
 from django.db.models import Q
+from django.http import HttpResponse
 
 def search(request):
     query = request.GET.get('q')
@@ -26,8 +27,9 @@ def search(request):
 
 # 🏠 Home (Categories)
 def home(request):
-    categories = Category.objects.all()
-    return render(request, 'home.html', {'categories': categories})
+    return HttpResponse("it home working")
+    # categories = Category.objects.all()
+    # return render(request, 'home.html', {'categories': categories})
 
 
 # 📂 Topics Category
