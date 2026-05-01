@@ -1,33 +1,25 @@
 {% load static %}
-
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl"> <!-- أضفنا dir="rtl" عشان المحتوى عربي -->
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency System</title>
-
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
-
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">🏠 الرئيسية</a>
+            <form action="/search/" method="GET" class="search-form">
+                <input type="text" name="q" placeholder="بحث عن حالة طوارئ...">
+                <button type="submit">بحث</button>
+            </form>
+        </div>
+    </nav>
 
-<!-- 🔥 NAVBAR -->
-<div class="navbar">
-
-    <a href="/">🏠 Home</a>
-
-    <!-- 🔍 Search in navbar -->
-    <form action="/search/" method="GET" class="search-form">
-        <input type="text" name="q" placeholder="Search emergency cases...">
-        <button type="submit">Search</button>
-    </form>
-
-</div>
-
-<!-- 🔥 CONTENT -->
-<div class="content">
-    {% block content %}
-    {% endblock %}
-</div>
-
+    <main class="content">
+        {% block content %} {% endblock %}
+    </main>
 </body>
 </html>
