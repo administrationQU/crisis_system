@@ -31,11 +31,7 @@ class Topic(models.Model):
 
 # Protocol
 class Protocol(models.Model):
-
-    topic = models.ForeignKey(
-        Topic,
-        on_delete=models.CASCADE
-    )
+    topic = models.OneToOneField(Topic, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.topic.title
