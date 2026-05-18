@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Category, Topic, Step
+from .models import Category, Topic, Protocol, Step
 from django.db.models import Q
 from django.http import HttpResponse
 
