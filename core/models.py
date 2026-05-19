@@ -62,3 +62,19 @@ class Step(models.Model):
 
     def __str__(self):
         return f"Step {self.step_number}"
+    
+class About(models.Model):
+    project_name = models.CharField(max_length=200)
+
+    university_logo = models.ImageField(upload_to='about/logos/')
+    college_logo = models.ImageField(upload_to='about/logos/')
+    group_image = models.ImageField(upload_to='about/group/')
+
+    description = RichTextUploadingField()
+
+    group_name = models.CharField(max_length=200)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.project_name

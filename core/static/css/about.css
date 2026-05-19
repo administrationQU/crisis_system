@@ -1,0 +1,31 @@
+.about-container{
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+}
+
+.about-header{
+    text-align: center;
+}
+
+.logo{
+    width: 120px;
+    margin: 10px;
+}
+
+.about-desc{
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.group-section{
+    margin-top: 40px;
+    text-align: center;
+}
+
+.group-img{
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+}

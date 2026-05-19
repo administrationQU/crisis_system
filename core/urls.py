@@ -9,4 +9,6 @@ urlpatterns = [
     path('protocol/<int:topic_id>/', views.protocol_view, name='protocol'),
 
     path('search/', views.search, name='search'),
+
+    path('about/', views.about, name='about'),
 ]

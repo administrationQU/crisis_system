@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Category, Topic, Protocol, Step
+from .models import Category, Topic, Protocol, Step, About
 from django.db.models import Q
 from django.http import HttpResponse
 
@@ -62,6 +62,10 @@ def protocol_view(request, topic_id):
         'protocol': protocol,
         'steps': steps
     })
+
+def about(request):
+    about = About.objects.first()
+    return render(request, 'about.html', {'about': about})
 
 
 # ❌ Error Pages
