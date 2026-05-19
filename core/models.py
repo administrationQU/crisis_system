@@ -63,18 +63,20 @@ class Step(models.Model):
     def __str__(self):
         return f"Step {self.step_number}"
     
+
+        # models.py
 class About(models.Model):
-    project_name = models.CharField(max_length=200)
-
     university_logo = models.ImageField(upload_to='about/logos/')
-    college_logo = models.ImageField(upload_to='about/logos/')
-    group_image = models.ImageField(upload_to='about/group/')
-
-    description = RichTextUploadingField()
-
-    group_name = models.CharField(max_length=200)
-
-    created_at = models.DateTimeField(auto_now_add=True)
-
+    project_name = models.CharField(max_length=200)
+    description = models.TextField() # استخدم CKEditor هنا إذا أردت
+    group_name = models.CharField(max_length=100)
+    group_image = models.ImageField(upload_to='about_images/')
+    
     def __str__(self):
         return self.project_name
+
+class ProjectGoal(models.Model):
+    about = models.ForeignKey(About, related_name='goals', on_delete=models.CASCADE)
+    title = models.CharField(max_length=100) # مثال: "تحسين الكفاءة"
+    description = models.TextField() # مثال: "رفع مستوى الأداء وتقليل الوقت"
+    icon = models.ImageField(upload_to='goal_icons/') # أيقونة لكل هدف

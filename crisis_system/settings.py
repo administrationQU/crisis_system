@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'core',
     'ckeditor',
     'ckeditor_uploader',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -122,6 +124,14 @@ USE_TZ = True
 import os
 from pathlib import Path
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dh3vgoeeg',
+    'API_KEY': '572429914644677',
+    'API_SECRET': '0YcHfWlxkDW-MXrRbAaUqc1RvLQ',
+}
+
+# لجعل الصور ترفع تلقائياً على Cloudinary
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 STATIC_URL = '/static/'
