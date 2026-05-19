@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from ckeditor_uploader.fields import RichTextUploadingField
+from cloudinary.models import CloudinaryField  
 # Category
 
 
@@ -49,8 +50,8 @@ class Step(models.Model):
 
     description = RichTextUploadingField()
 
-    image = models.ImageField(
-        upload_to='steps/',
+    image = CloudinaryField(
+        'image',
         null=True,
         blank=True
     )
@@ -64,19 +65,27 @@ class Step(models.Model):
         return f"Step {self.step_number}"
     
 
-        # models.py
+from django.db import models
+from cloudinary.models import CloudinaryField
+
+# about
 class About(models.Model):
-    university_logo = models.ImageField(upload_to='about/logos/')
     project_name = models.CharField(max_length=200)
-    description = models.TextField() # استخدم CKEditor هنا إذا أردت
+    university_logo = CloudinaryField('image')
+    college_logo = CloudinaryField('image') # تم تصحيح الاسم
+    description = models.TextField() 
     group_name = models.CharField(max_length=100)
-    group_image = models.ImageField(upload_to='about_images/')
+    group_image = CloudinaryField('image', blank=True, null=True) # أضفتها لتكتمل الصورة
     
     def __str__(self):
         return self.project_name
 
+# نموذج الأهداف المرتبط بالمشروع
 class ProjectGoal(models.Model):
     about = models.ForeignKey(About, related_name='goals', on_delete=models.CASCADE)
-    title = models.CharField(max_length=100) # مثال: "تحسين الكفاءة"
-    description = models.TextField() # مثال: "رفع مستوى الأداء وتقليل الوقت"
-    icon = models.ImageField(upload_to='goal_icons/') # أيقونة لكل هدف
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    icon = CloudinaryField('image')
+
+    def __str__(self):
+        return f"{self.about.project_name} - {self.title}"
