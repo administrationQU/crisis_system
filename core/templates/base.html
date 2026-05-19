@@ -16,13 +16,16 @@
 
         <div class="nav-container">
 
-            <!-- Links -->
+            <!-- LEFT LINKS -->
             <div class="nav-links">
-                <a href="/" class="nav-logo">🏠 الرئيسية</a>
-                <a href="/about/" class="about-link">ℹ️ حول المشروع</a>
+                <a href="/" class="nav-logo">🏠 home</a>
+                <a href="/about/" class="about-link">ℹ️ about</a>
             </div>
 
-            <!-- Search -->
+            <!-- MOBILE MENU BUTTON -->
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+            <!-- SEARCH -->
             <form action="/search/" method="GET" class="search-form">
                 <input type="text" name="q" placeholder="بحث عن حالة طوارئ...">
                 <button type="submit">بحث</button>
@@ -36,6 +39,12 @@
         {% block content %}
         {% endblock %}
     </main>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        }
+    </script>
 
 </body>
 
