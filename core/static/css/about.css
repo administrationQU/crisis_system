@@ -1,31 +1,88 @@
-.about-container{
+/* تنسيق الحاوية الرئيسية */
+.about-container {
     max-width: 1000px;
     margin: auto;
-    padding: 30px;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
 }
 
-.about-header{
+/* الهيدر */
+.about-header {
     text-align: center;
+    margin-bottom: 40px;
 }
 
-.logo{
-    width: 120px;
-    margin: 10px;
-}
-
-.about-desc{
+.about-header h1 {
+    font-size: 3rem;
+    color: #002d62; /* لون داكن احترافي */
     margin-top: 20px;
-    font-size: 18px;
+}
+
+.logo {
+    width: 120px;
+    margin: 0 15px;
+}
+
+/* الوصف */
+.about-desc {
+    margin: 30px 0;
+    font-size: 1.1rem;
     line-height: 1.8;
-}
-
-.group-section{
-    margin-top: 40px;
     text-align: center;
+    color: #555;
 }
 
-.group-img{
-    width: 100%;
-    max-width: 500px;
-    border-radius: 12px;
+/* قسم الأهداف - Grid System */
+.goals-section {
+    margin-top: 50px;
+}
+
+.goals-section h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    color: #002d62;
+}
+
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 أعمدة */
+    gap: 20px;
+}
+
+.goal-item {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.goal-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.goal-item img {
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+.goal-item h4 {
+    margin-bottom: 10px;
+    color: #002d62;
+}
+
+/* التجاوب مع شاشات الموبايل */
+@media (max-width: 768px) {
+    .goals-grid {
+        grid-template-columns: 1fr 1fr; /* عمودين للموبايل */
+    }
+}
+
+@media (max-width: 480px) {
+    .goals-grid {
+        grid-template-columns: 1fr; /* عمود واحد للشاشات الصغيرة */
+    }
 }

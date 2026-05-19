@@ -2,34 +2,34 @@
 {% load static %}
 
 {% block content %}
-
 <link rel="stylesheet" href="{% static 'css/about.css' %}">
 
 <div class="about-container">
-
     {% if about %}
-
-    <!-- HEADER -->
     <div class="about-header">
-        <img src="{{ about.university_logo.url }}" class="logo">
-        <img src="{{ about.college_logo.url }}" class="logo">
-
-        <h1>{{ about.project_name }}</h1>
+        <div class="logos">
+            <img src="{{ about.university_logo.url }}" alt="University Logo">
+            <img src="{{ about.college_logo.url }}" alt="Faculty Logo">
+        </div>
+        <h1>ABOUT <span>THE PROJECT</span></h1>
     </div>
 
-    <!-- DESCRIPTION -->
     <div class="about-desc">
-        {{ about.description|safe }}
+        <p>{{ about.description }}</p>
     </div>
 
-    <!-- GROUP -->
-    <div class="group-section">
-        <h2>👥 {{ about.group_name }}</h2>
-        <img src="{{ about.group_image.url }}" class="group-img">
+    <div class="goals-section">
+        <h3>أهداف المشروع</h3>
+        <div class="goals-grid">
+            {% for goal in about.goals.all %}
+            <div class="goal-item">
+                <img src="{{ goal.icon.url }}" alt="{{ goal.title }}">
+                <h4>{{ goal.title }}</h4>
+                <p>{{ goal.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-
     {% endif %}
-
 </div>
-
 {% endblock %}
