@@ -17,12 +17,12 @@
         <div class="nav-container">
 
             <!-- LEFT LINKS -->
-            <div class="nav-links">
-                <a href="/" class="nav-logo">🏠 home</a>
-                <a href="/about/" class="about-link">ℹ️ about</a>
+            <div class="nav-left">
+                <a href="/" class="nav-logo">🏠 Home</a>
+                <a href="/about/" class="about-link">ℹ️ About</a>
             </div>
 
-            <!-- MOBILE MENU BUTTON -->
+            <!-- MENU BUTTON (mobile only) -->
             <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
             <!-- SEARCH -->
@@ -33,6 +33,16 @@
 
         </div>
 
+        <!-- MOBILE MENU -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+
+            <form action="/search/" method="GET" class="mobile-search">
+                <input type="text" name="q" placeholder="بحث...">
+            </form>
+        </div>
+
     </nav>
 
     <main class="content">
@@ -40,10 +50,22 @@
         {% endblock %}
     </main>
 
+    <!-- JS INSIDE HTML (as requested) -->
     <script>
         function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('show');
+            const menu = document.getElementById("mobileMenu");
+            menu.classList.toggle("show");
         }
+
+        // optional: close menu when clicking outside
+        document.addEventListener("click", function (e) {
+            const menu = document.getElementById("mobileMenu");
+            const button = document.querySelector(".menu-toggle");
+
+            if (!menu.contains(e.target) && !button.contains(e.target)) {
+                menu.classList.remove("show");
+            }
+        });
     </script>
 
 </body>

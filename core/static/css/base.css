@@ -1,5 +1,5 @@
 /* =========================
-   1. GENERAL SETTINGS
+   GENERAL
 ========================= */
 * {
     box-sizing: border-box;
@@ -8,60 +8,54 @@
 
 body {
     margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7fb;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #f4f7fb;
     color: #333;
-    line-height: 1.6;
     overflow-x: hidden;
 }
 
 /* =========================
-   2. NAVBAR (PRO LEVEL)
+   NAVBAR
 ========================= */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(33, 150, 243, 0.95);
+    background: rgba(33,150,243,0.95);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
     z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
 }
 
 .nav-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
     padding: 12px 20px;
 
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
-    gap: 15px;
 }
 
-/* LEFT SIDE */
-.nav-links {
+/* LEFT */
+.nav-left {
     display: flex;
-    align-items: center;
     gap: 12px;
+    align-items: center;
 }
 
-.nav-logo {
+.nav-logo,
+.about-link {
     color: white;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .about-link {
-    text-decoration: none;
-    color: white;
-    padding: 8px 14px;
-    border-radius: 10px;
+    padding: 6px 12px;
+    border-radius: 8px;
     background: rgba(255,255,255,0.15);
     transition: 0.3s;
-    font-weight: 600;
 }
 
 .about-link:hover {
@@ -69,19 +63,18 @@ body {
     color: #2196f3;
 }
 
-/* CENTER SEARCH */
+/* SEARCH CENTER */
 .search-form {
     display: flex;
     justify-content: center;
-    width: 100%;
 }
 
 .search-form input {
     width: 100%;
-    max-width: 420px;
+    max-width: 450px;
     padding: 10px 14px;
-    border-radius: 10px;
     border: none;
+    border-radius: 10px;
     outline: none;
 }
 
@@ -96,25 +89,53 @@ body {
     cursor: pointer;
 }
 
-/* RIGHT SIDE (future use / spacing balance) */
-.nav-right {
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* MOBILE DROPDOWN */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: #2196f3;
+    padding: 10px;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.mobile-menu a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.mobile-menu.show {
     display: flex;
-    justify-content: flex-end;
 }
 
 /* =========================
-   3. CONTENT
+   CONTENT
 ========================= */
 .content {
-    margin-top: 85px;
+    margin-top: 90px;
     padding: 20px;
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 }
 
 /* =========================
-   4. HOME GRID
+   CARDS
 ========================= */
 .grid {
     display: grid;
@@ -124,12 +145,11 @@ body {
 
 .card {
     background: white;
-    padding: 25px 15px;
+    padding: 20px;
     border-radius: 15px;
     text-decoration: none;
     color: #222;
     box-shadow: 0 6px 15px rgba(0,0,0,0.06);
-    text-align: center;
     transition: 0.3s;
 }
 
@@ -139,7 +159,7 @@ body {
 }
 
 /* =========================
-   5. TOPICS
+   TOPICS
 ========================= */
 .topic-card {
     background: white;
@@ -153,98 +173,47 @@ body {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    margin-top: 10px;
 }
 
 .doc, .nur, .view-btn {
     flex: 1;
     min-width: 120px;
-    padding: 10px 15px;
+    padding: 10px;
     border-radius: 10px;
+    text-align: center;
     text-decoration: none;
     color: white;
-    text-align: center;
-    transition: 0.3s;
 }
 
 .doc, .view-btn { background: #2196f3; }
 .nur { background: #4caf50; }
 
-.doc:hover, .nur:hover, .view-btn:hover {
-    transform: scale(1.03);
-}
-
 /* =========================
-   6. ROLES
-========================= */
-.roles {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.role {
-    padding: 30px;
-    width: 200px;
-    border-radius: 15px;
-    text-align: center;
-    color: white;
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-.role:hover {
-    transform: translateY(-6px);
-}
-
-/* =========================
-   7. STEPS
-========================= */
-.step-card {
-    background: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
-
-.step-card img,
-.step-card iframe {
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 15px;
-}
-
-/* =========================
-   8. MOBILE (PRO FIX)
+   MOBILE FIX
 ========================= */
 @media (max-width: 768px) {
 
     .nav-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 10px;
-    }
-
-    .nav-links {
-        justify-content: center;
+        grid-template-columns: 1fr auto;
     }
 
     .search-form {
-        justify-content: center;
+        display: none; /* search يختفي في الموبايل */
     }
 
-    .search-form input {
-        max-width: 250px;
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-left {
+        display: none; /* Home + About تختفي */
     }
 
     .content {
-        margin-top: 140px;
+        margin-top: 120px;
     }
 
     .grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
     }
 }
