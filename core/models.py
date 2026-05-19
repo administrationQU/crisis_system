@@ -73,7 +73,7 @@ class About(models.Model):
     project_name = models.CharField(max_length=200)
     university_logo = CloudinaryField('image')
     college_logo = CloudinaryField('image') # تم تصحيح الاسم
-    description = models.TextField() 
+    description = RichTextUploadingField() 
     group_name = models.CharField(max_length=100)
     group_image = CloudinaryField('image', blank=True, null=True) # أضفتها لتكتمل الصورة
     
@@ -84,7 +84,7 @@ class About(models.Model):
 class ProjectGoal(models.Model):
     about = models.ForeignKey(About, related_name='goals', on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    description = models.TextField()
+    description = RichTextUploadingField()
     icon = CloudinaryField('image')
 
     def __str__(self):
