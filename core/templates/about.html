@@ -8,14 +8,14 @@
     {% if about %}
     <div class="about-header">
         <div class="logos">
-            <img src="{{ about.university_logo.url }}" alt="University Logo">
-            <img src="{{ about.college_logo.url }}" alt="Faculty Logo">
+            <img src="{{ about.university_logo.url }}" class="logo" alt="University Logo">
+            <img src="{{ about.college_logo.url }}" class="logo" alt="Faculty Logo">
         </div>
         <h1>ABOUT <span>THE PROJECT</span></h1>
     </div>
 
     <div class="about-desc">
-        <p>{{ about.description }}</p>
+        <p>{{ about.description|safe }}</p>
     </div>
 
     <div class="goals-section">
@@ -30,6 +30,16 @@
             {% endfor %}
         </div>
     </div>
+
+    {% if about.group_image %}
+    <div class="group-section">
+        <h2>👥 {{ about.group_name }}</h2>
+        <img src="{{ about.group_image.url }}" class="group-img" alt="Group Image">
+    </div>
+    {% endif %}
+
+    {% else %}
+        <p style="text-align:center;">لا توجد بيانات للمشروع حالياً.</p>
     {% endif %}
 </div>
 {% endblock %}
