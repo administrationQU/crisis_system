@@ -25,7 +25,7 @@
             <div class="goal-item">
                 <img src="{{ goal.icon.url }}" alt="{{ goal.title }}">
                 <h4>{{ goal.title }}</h4>
-                <p>{{ goal.description }}</p>
+                <p>{{ goal.description|safe }}</p>
             </div>
             {% endfor %}
         </div>
