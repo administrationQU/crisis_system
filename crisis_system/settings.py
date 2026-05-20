@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@^f^o%48h3j5fgeb+y1whz)w%a^&^w1+zln(s3a%@5ib&7+0(1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -125,9 +125,9 @@ import os
 from pathlib import Path
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dh3vgoeeg',
-    'API_KEY': '572429914644677',
-    'API_SECRET': '0YcHfWlxkDW-MXrRbAaUqc1RvLQ',
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
 }
 
 STORAGES = {
