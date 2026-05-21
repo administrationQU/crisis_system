@@ -26,6 +26,12 @@
             <img src="{{ step.image.url }}">
         {% endif %}
 
+        {% if step.video %}
+            <video controls class="step-video">
+                <source src="{{ step.video.url }}" type="video/mp4">
+            </video>
+        {% endif %}
+
         {% if step.video_url %}
             <iframe src="{{ step.video_url }}"></iframe>
         {% endif %}

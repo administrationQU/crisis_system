@@ -93,6 +93,14 @@
     border-radius: 10px;
 }
 
+.step-video {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    background: black;
+}
+
 /* 🔹 Video */
 .step-card iframe {
     width: 100%;

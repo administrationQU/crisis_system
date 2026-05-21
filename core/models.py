@@ -56,6 +56,12 @@ class Step(models.Model):
         blank=True
     )
 
+    video = CloudinaryField(
+        resource_type='video',
+        null=True,
+        blank=True
+    )
+    
     video_url = models.URLField(
         null=True,
         blank=True
