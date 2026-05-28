@@ -14,15 +14,21 @@
 }
 
 .logos {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto 25px auto;
+    padding: 0 20px;
 }
 
 .logo {
-    width: 70px;
+    width: 90px;
     height: auto;
+    object-fit: contain;
+
 }
 
 .about-header h1 {
@@ -103,16 +109,67 @@
 
 /* التجاوب مع شاشات الجوال */
 @media (max-width: 900px) {
+
+    .about-container {
+        padding: 20px;
+    }
+
     .goals-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-desc {
+        padding: 0 5%;
+    }
+
+    .logos {
+        max-width: 500px;
+    }
+
+    .logo {
+        width: 75px;
     }
 }
 
 @media (max-width: 600px) {
+
+    .about-container {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
     .goals-grid {
         grid-template-columns: 1fr;
     }
+
     .about-header h1 {
         font-size: 1.8rem;
+        line-height: 1.4;
+    }
+
+    .about-desc {
+        font-size: 1rem;
+        padding: 0;
+    }
+
+    .logos {
+        padding: 0 10px;
+        gap: 15px;
+    }
+
+    .logo {
+        width: 60px;
+    }
+
+    .goal-item {
+        padding: 18px;
+    }
+
+    .group-section {
+        padding: 20px;
+    }
+
+    .group-img {
+        border-radius: 12px;
     }
 }
