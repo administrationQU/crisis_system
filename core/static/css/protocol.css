@@ -109,6 +109,19 @@
     border-radius: 10px;
     border: none;
 }
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.video-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 12px;
+}
 
 /* 🔹 Divider between steps */
 .step-card::after {
